@@ -1,4 +1,12 @@
-<p style="text-align: center">
+<div>
+
+<p>OUTFITTER</p>
+
+
+</div>
+
+
+<p>
 
     <% if logged_in? %>
         Hi, <%= current_user.name %>!
@@ -19,4 +27,3 @@
         <%= link_to("Login", session_new_path) %>
     <% end %>
 </p>
-
