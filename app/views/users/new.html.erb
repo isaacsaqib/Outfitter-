@@ -1,4 +1,6 @@
-<a href="/session/new">Sign up!</a>
+
+<p>
+<a href="/session/new">Login!</a>
 
 <% @user.errors.messages.each do |attr, message| %>
   <p>error on <%= attr %><%= message %></p>
@@ -22,3 +24,4 @@
     <%= f.password_field(:password_confirmation) %>
   <%= f.submit %>
 <% end %>
+</p>
