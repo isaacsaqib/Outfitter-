@@ -46,7 +46,7 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
-  database: outfitter_app_test
+  database: outfitter_app_development
   pool: 5
   username: isaacsaqib
   password:
