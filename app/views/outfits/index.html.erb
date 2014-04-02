@@ -1,0 +1,20 @@
+<a href="/">Home</a>
+<br>
+
+
+  <% @outfits.each do |outfit| %>
+    <%= image_tag outfit.photo.url(:small) %> <br>
+    <strong>Description: </strong>  <%= outfit.description %> <br>
+    <strong>Brand Name: </strong> <%= outfit.brand_name %> <br>
+    <strong>Style: </strong><%= outfit.style %> <br>
+    <strong>Votes: <%= outfit.vote_count %></strong>
+    <%= form_tag("/vote/#{outfit.id}", method: "patch") do %>
+      <%= submit_tag("Like") %>
+    <% end %>
+  <% end %>
+
+
+
+
+
+

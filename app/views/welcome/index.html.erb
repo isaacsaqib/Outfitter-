@@ -1,0 +1,22 @@
+<p style="text-align: center">
+
+    <% if logged_in? %>
+        Hi, <%= current_user.name %>!
+        <br>
+          <a href="/logout"> Logout</a>
+        <br>
+        <%= link_to("Upload an outfit", new_outfit_path) %>
+        <br>
+        <a href="/outfits/<%=current_user.id%>">View your gallery</a>
+        <br>
+        <%= link_to("All outfits", all_outfits_path) %>
+        <br>
+        <a href="/random">Explore Outfits!</a>
+        <br>
+        <a href="/users">Explore Users!</a>
+    <% else %>
+        <%= link_to("Sign up", new_user_path) %>
+        <%= link_to("Login", session_new_path) %>
+    <% end %>
+</p>
+

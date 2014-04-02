@@ -1,0 +1,23 @@
+<a href="/">Home</a>
+
+<% @outfit.errors.messages.each do |attr, message| %>
+  <p>error on <%= attr %><%= message %></p>
+<% end %>
+
+<h1> Upload a shirt! </h1>
+
+<%= form_for @outfit, :url => outfits_path, :html => {:multipart => true } do |f| %>
+  <%= f.file_field :photo %>
+  <%= f.label(:description) %>
+    <%= f.text_field(:description) %>
+  <%= f.label(:brand_name) %>
+    <%= f.text_field(:brand_name) %>
+  <%= f.label(:style) %>
+    <%= f.text_field(:style) %>
+    <%= f.hidden_field :user_id, :value => @user.id %>
+  <%= f.submit %>
+
+
+
+<% end %>
+
