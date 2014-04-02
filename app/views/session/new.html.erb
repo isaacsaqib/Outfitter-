@@ -1,10 +1,13 @@
+<p>
 <a href="/">Home</a>
+<ul>
+    <%= form_tag("/session", method: "post") do %>
+      <%= label_tag(:email) %>
+      <%= text_field_tag(:email) %>
+      <%= label_tag(:password) %>
+      <%= password_field_tag(:password) %>
+      <%= submit_tag("Login") %>
+      <% end %>
+<ul>
 
-<%= form_tag("/session", method: "post") do %>
-  <%= label_tag(:email) %>
-  <%= text_field_tag(:email) %>
-  <%= label_tag(:password) %>
-  <%= password_field_tag(:password) %>
-  <%= submit_tag("Login") %>
-<% end %>
-
+</p>
