@@ -40,6 +40,7 @@ gem "paperclip", "~> 4.1.1"
 
 gem 'httparty'
 
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
@@ -47,6 +48,8 @@ group :development, :test do
   gem 'annotate', ">=2.6.0"
   gem "rails-erd"
 end
+
+gem 'rails_12factor', group: :production
 
 
 
