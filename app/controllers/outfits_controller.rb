@@ -11,6 +11,7 @@ class OutfitsController < ApplicationController
     @outfits = Outfit.all
     @outfit = Outfit.new
     @user = current_user
+    #displays new form
   end
 
   def create
@@ -26,12 +27,9 @@ class OutfitsController < ApplicationController
       end
   end
 
-  def show
-    @outfits = Outfit.where(user_id: current_user.id)
-  end
-
   def all_outfits
     @oufits = Outfit.all
+    #All outfits page linking to index
   end
 
   def vote
@@ -44,24 +42,28 @@ class OutfitsController < ApplicationController
 
   def random
     @instagram_outfits = outfit_search
+    #Explore outfits page
   end
 
   def outfit_search
+    results = []
     response = HTTParty.get("https://api.instagram.com/v1/tags/ootd/media/recent?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}")
-    outfit_links = response["data"].map do |image|
-      image["images"]["low_resolution"]["url"]
+    outfit_links = response["data"].map do |gram|
+      results << [gram["images"]["low_resolution"]["url"],
+      gram["likes"]["count"]]
     end
-
+    results
   end
+  #API USAGE BOY
 
 
 
-  # def likes
-  #   response = HTTParty.get("https://api.instagram.com/v1/tags/ootd/media/recent?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}")
-  #   likes = response["data"].map do |like|
-  #       like["likes"]["count"]
-  #   end
-  # end
+  def likes
+    response = HTTParty.get("https://api.instagram.com/v1/tags/ootd/media/recent?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}")
+    likes = response["data"].map do |like|
+        like["likes"]["count"]
+    end
+  end
 
   private
 
