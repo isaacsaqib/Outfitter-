@@ -21,8 +21,8 @@ class UsersController < ApplicationController
     @user = User.find_by(id: params[:id])
     @outfits = @user.outfits
     @outfit = Outfit.find_by(id: params[:id])
-    # @comment = Comment.new
-    # @comments = Comment.all
+    @comment = Comment.new
+    @comments = Comment.all
   end
 
   def vote
