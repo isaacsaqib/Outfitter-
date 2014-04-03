@@ -4,12 +4,11 @@ class SessionController < ApplicationController
   end
 
   def create
-    # find the user by the given email
+    # finds the user by the given email
     user = User.find_by(email: params[:email])
     # if we found the user and they gave us the right password
     if user && user.authenticate(params[:password])
       # store user id in session
-      # i made up the key. i could call it football
       session[:user_id] = user.id
       redirect_to("/")
     else

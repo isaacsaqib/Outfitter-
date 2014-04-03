@@ -1,15 +1,44 @@
+<p>
 <a href="/">Home</a>
 <br>
+<h1><%= current_user.name%>'s Gallery</h1>
+</p>
 
 <!-- @outfits = [outfit_instance, outfit_instance, etc] -->
-<% @outfits.each do |outfit| %>
-  <%= image_tag outfit.photo.url(:small) %>
-  <p><%= outfit.style %></p>
-  <p><%= outfit.brand_name %></p>
-  <p><%= outfit.description %></p>
-  <strong>Votes: <%= outfit.vote_count %></strong>
-   <%= form_tag("/vote/#{outfit.id}", method: "patch") do %>
-      <%= submit_tag("Like") %>
-    <% end %>
-<% end %>
 
+
+<% i=1 %>
+<table>
+  <tr>
+<% @outfits.each do |outfit| %> <% i += 1 %>
+  <td>
+ <%= image_tag outfit.photo.url(:small) %>
+ <br>
+<strong>Style:</strong> <%= outfit.style %>
+<br>
+<strong>Brand:</strong> <%= outfit.brand_name %>
+<br>
+<strong>Description:</strong> <%= outfit.description %>
+<br>
+ <strong><p class="ig_likes">♥ </strong> <%= outfit.vote_count %> likes</p>
+  <%= form_tag("/vote/#{outfit.id}", method: "patch") do %>
+     <%= submit_tag("Like") %>
+    <% end %>
+  </td>
+  <% if i.modulo(6)==5 %></tr><tr><% end %>
+    <% end %>
+  </table>
+
+
+
+
+<%= form_for(@comment) do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
+    <%= f.text_area :text_section %>
+    <%= f.hidden_field :outfit_id, :value => @outfit.id%>
+    <%= f.submit 'Add Comment' %>
+  <% end %>
+
+  <% @comments.each do |comment| %>
+    <%= comment.text_section %>
+    <% end %>

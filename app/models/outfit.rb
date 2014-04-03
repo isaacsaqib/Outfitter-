@@ -1,4 +1,6 @@
 class Outfit < ActiveRecord::Base
+  has_many :comments
+
   has_many :votes
   belongs_to :user
   has_attached_file :photo, :styles => { :small => "300x450>" },

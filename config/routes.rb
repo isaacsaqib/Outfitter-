@@ -6,6 +6,7 @@ OutfitterApp::Application.routes.draw do
   root 'welcome#index'
   resources :users
   resources :outfits
+  resources :comments
 
   #Session routes
   get  "/session/new"  => "session#new"
@@ -18,6 +19,8 @@ OutfitterApp::Application.routes.draw do
   get "/random" => "outfits#random"
   #voting route
   patch "/vote/:id" => "outfits#vote"
+
+
                 # "controller#action"
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

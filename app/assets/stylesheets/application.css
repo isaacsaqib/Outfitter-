@@ -12,18 +12,37 @@
  *= require_tree .
  */
 
- p {
-  color: white;
-  font-style: "Charcoal";
-  font-size: 40px;
+ body {
   text-align: center;
  }
 
- div {
+ p {
+  color: black;
+  font-family: "Impact";
+  font-size: 20px;
+  text-align: center;
+ }
+
+ .left_column {
   background-color: black;
-  float: left;
-  height: 800px;
+  float: center;
+  height: 400px;
+  width: 400px;
   position: relative;
+
+ }
+
+ .logo {
+  color: black;
+  vertical-align: middle;
+  font-family: "Impact";
+  font-size: 70px;
+
+ }
+
+ .ig_likes {
+  color: red;
+  font-size: 16px;
 
  }
 
@@ -37,5 +56,15 @@
 
  ul {
     text-align: center;
+
+ }
+
+ h1 {
+    text-align: center;
+
+ }
+
+ .fb-like {
+  text-align: center;
 
  }

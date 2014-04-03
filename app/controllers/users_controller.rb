@@ -20,6 +20,9 @@ class UsersController < ApplicationController
 
   def show
     @outfits = Outfit.where(user_id: current_user.id)
+    @outfit = Outfit.find(params[:id])
+    @comment = Comment.new
+    @comments = Comment.all
   end
 
   def vote

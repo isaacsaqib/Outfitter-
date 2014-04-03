@@ -53,6 +53,7 @@ gem 'rails_12factor', group: :production
 
 
 
+
 # gem 'activerecord-reputation-system', require: 'reputation_system'
 
 # gem 'protected_attributes'

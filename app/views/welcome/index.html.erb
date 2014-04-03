@@ -1,10 +1,11 @@
-<div>
-
-<p>OUTFITTER</p>
-
-
-</div>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_GB/all.js#xfbml=1";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 <p>
 
@@ -15,15 +16,34 @@
         <br>
         <%= link_to("Upload an outfit", new_outfit_path) %>
         <br>
-        <a href="/outfits/<%=current_user.id%>">View your gallery</a>
+        <a href="/users/<%=current_user.id%>">View your gallery</a>
         <br>
         <%= link_to("All outfits", all_outfits_path) %>
         <br>
         <a href="/random">Explore Outfits!</a>
         <br>
         <a href="/users">Explore Users!</a>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     <% else %>
         <%= link_to("Sign up", new_user_path) %>
         <%= link_to("Login", session_new_path) %>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <div class="fb-like" data-href="https://developers.facebook.com/docs/plugins/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     <% end %>
 </p>
+
+

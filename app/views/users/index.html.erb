@@ -1,14 +1,10 @@
 <% @users.each do |user| %>
-  <a href="users/<%=user.id%>">User profile</a>
-  <br>
-  <%= user.name %>
-  <br>
-  <%= user.gender %>
-  <br>
-  <%= user.email %>
-  <br>
-  <%= user.style %>
-  <br>
-  <%= user.age %>
-  <br>
+  <a href="/users/<%= user.id %>">User profile</a>
+
+  <p class="ig_likes"><strong>Name:</strong></p> <%= user.name %>
+  <p class="ig_likes">Gender:</strong></p> <%= user.gender %>
+  <p class="ig_likes">Email:</strong></p> <%= user.email %>
+  <p class="ig_likes">Style:</strong></p> <%= user.style %>
+  <p class="ig_likes">Age:</strong></p> <%= user.age %>
+
   <% end %>
