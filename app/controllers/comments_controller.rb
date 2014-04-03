@@ -2,6 +2,7 @@ class CommentsController < ApplicationController
 
 
   def create
+    @user = current_user
     @comment = Comment.new(comment_params)
       if @comment.save
         redirect_to("/users/#{current_user.id}")
