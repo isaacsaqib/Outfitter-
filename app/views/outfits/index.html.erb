@@ -7,7 +7,7 @@
     <strong>Description: </strong>  <%= outfit.description %> <br>
     <strong>Brand Name: </strong> <%= outfit.brand_name %> <br>
     <strong>Style: </strong><%= outfit.style %> <br>
-    <strong><p class="ig_likes">♥ <%= outfit.vote_count %>likes </p></strong>
+    <strong><p class="ig_likes">♥ <%= outfit.vote_count %> likes </p></strong>
     <%= form_tag("/vote/#{outfit.id}", method: "patch") do %>
       <%= submit_tag("Like") %>
     <% end %>
