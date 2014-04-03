@@ -3,7 +3,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-
   def new
     @user = User.new
   end
@@ -19,8 +18,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    @outfits = Outfit.where(user_id: current_user.id)
-    @outfit = Outfit.find(params[:id])
+    @user = User.find_by(id: params[:id])
+    @outfits = @user.outfits
+    @outfit = Outfit.find_by(id: params[:id])
     @comment = Comment.new
     @comments = Comment.all
   end
@@ -39,3 +39,4 @@ private #only for the controller 22
     params.require(:user).permit(:name, :gender, :email, :style, :age, :password, :password_confirmation)
   end
 end
+
