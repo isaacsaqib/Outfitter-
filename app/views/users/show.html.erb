@@ -30,10 +30,8 @@
   </table>
 
 
-
-<!--
-<%= #form_for(@comment) do |f| %>
-    <%= #f.hidden_field :user_id, :value => current_user.id %>
+<%= form_for(@comment) do |f| %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.text_area :text_section %>
     <%= f.hidden_field :outfit_id, :value => @outfit.id%>
     <%= f.submit 'Add Comment' %>
@@ -42,4 +40,3 @@
   <% @comments.each do |comment| %>
     <%= comment.text_section %>
     <% end %>
- -->
