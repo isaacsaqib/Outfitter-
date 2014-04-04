@@ -1,7 +1,6 @@
 <a href="/">Home</a>
 <br>
 
-<p>cool</p>
   <% @outfits.each do |outfit| %>
     <%= image_tag outfit.photo.url(:small) %> <br>
     <strong>Description: </strong>  <%= outfit.description %> <br>
