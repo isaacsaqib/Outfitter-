@@ -20,11 +20,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find_by(id: params[:id])
     @outfits = @user.outfits
-    @outfit = Outfit.find_by(id: params[:id])
-    @comment = Comment.new
-    @comments = Comment.all
   end
-
   def vote
     # @user = User.find(params[:user_id])
     @outfit = Outfit.find(params[:id])
