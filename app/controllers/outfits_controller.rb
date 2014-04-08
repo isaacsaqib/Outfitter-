@@ -47,7 +47,7 @@ class OutfitsController < ApplicationController
 
   def outfit_search
     results = []
-    response = HTTParty.get("https://api.instagram.com/v1/tags/ootd/media/recent?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}")
+    response = HTTParty.get("https://api.instagram.com/v1/tags/outfit/media/recent?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}")
     outfit_links = response["data"].map do |gram|
       results << [gram["images"]["low_resolution"]["url"],
       gram["likes"]["count"]]
@@ -56,14 +56,6 @@ class OutfitsController < ApplicationController
   end
   #API USAGE BOY
 
-
-
-  def likes
-    response = HTTParty.get("https://api.instagram.com/v1/tags/ootd/media/recent?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}")
-    likes = response["data"].map do |like|
-        like["likes"]["count"]
-    end
-  end
 
   private
 
@@ -78,3 +70,13 @@ class OutfitsController < ApplicationController
   end
 end
 
+# https://api.instagram.com/oauth/authorize/?client_id=d5809c177a14434cb71f0fbb80be9d84&redirect_uri=http://intense-stream-2912.herokuapp.com/
+# &response_type=code
+
+# curl \-F 'client_id=d5809c177a14434cb71f0fbb80be9d84' \
+#     -F 'client_secret=4b0d530df56f4e40ae76d95287fedbec' \
+#     -F 'grant_type=authorization_code' \
+#     -F 'redirect_uri=http://intense-stream-2912.herokuapp.com/' \
+#     -F 'code=3eb83ef10a3044dba8f7cb4d4a5b1772' \https://api.instagram.com/oauth/access_token
+
+#     https://api.instagram.com/oauth/authorize/?client_id=d5809c177a14434cb71f0fbb80be9d84&redirect_uri=http://intense-stream-2912.herokuapp.com/&response_type=code

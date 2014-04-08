@@ -1,16 +1,18 @@
 
-<p style="text-align:center">
 <a href="/">Home</a>
 <br>
 
 <a href="/random">Click for new outfits!</a>
 </p>
 <br>
+
+
 <% @instagram_outfits.each do |outfit| %>
-    <br><img src="<%= outfit[0] %>"/><br>
-
-    <p class="ig_likes">♥ <%= outfit[1] %> likes</p>
-
+<div class="outfit">
+   <img src="<%= outfit[0] %>"/><br>
+<span class="ig_likes">♥ <%= outfit[1] %> likes </span>
+</div>
 
 <% end %>
+
 

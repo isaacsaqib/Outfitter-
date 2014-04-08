@@ -7,11 +7,12 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
 
-<p>
+
 
     <% if logged_in? %>
         Hi, <%= current_user.name %>!
         <br>
+    <span class="links">
           <a href="/logout"> Logout</a>
         <br>
         <%= link_to("Upload an outfit", new_outfit_path) %>
@@ -30,7 +31,7 @@
         <br>
         <br>
         <br>
-
+    </span>
         <div class="fb-like" data-href="http://intense-stream-2912.herokuapp.com/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     <% else %>
         <%= link_to("Sign up", new_user_path) %>
