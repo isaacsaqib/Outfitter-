@@ -10,32 +10,31 @@
 
 
     <% if logged_in? %>
-        Hi, <%= current_user.name %>!
-        <br>
-    <span class="links">
-          <a href="/logout"> Logout</a>
-        <br>
-        <%= link_to("Upload an outfit", new_outfit_path) %>
-        <br>
-        <a href="/users/<%=current_user.id%>">View your gallery</a>
-        <br>
-        <%= link_to("All outfits", all_outfits_path) %>
-        <br>
-        <a href="/random">Explore Outfits!</a>
-        <br>
-        <a href="/users">Explore Users!</a>
-        <br>
-        <br>
+        <h2>Hi, <%= current_user.name %>!</h2>
+
+          <a class="links" href="/logout"> Logout</a>
+        <%= link_to("Upload an outfit", new_outfit_path, class: "links") %>
+
+        <a class="links" href="/users/<%=current_user.id%>">View your gallery</a>
+
+        <%= link_to("All outfits", all_outfits_path, class: "links") %>
+
+        <a class="links" href="/random">Explore Outfits!</a>
+
+        <a class="links" href="/users">Explore Users!</a>
+
+
         <br>
         <br>
         <br>
         <br>
         <br>
-    </span>
+        <br>
+        <br>
         <div class="fb-like" data-href="http://intense-stream-2912.herokuapp.com/" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
     <% else %>
-        <%= link_to("Sign up", new_user_path) %>
-        <%= link_to("Login", session_new_path) %>
+        <%= link_to("Sign up", new_user_path, class: "links") %>
+        <%= link_to("Login", session_new_path, class: "links") %>
         <br>
         <br>
         <br>

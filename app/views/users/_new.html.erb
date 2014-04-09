@@ -1,37 +1,18 @@
-
-<% @user.errors.messages.each do |attr, message| %>
-  <p>error on <%= attr %><%= message %></p>
-<% end %>
-
 <%= form_for(@user) do |f| %>
   <%= f.label(:name) %>
     <%= f.text_field(:name) %>
-    <br>
   <%= f.label(:email) %>
     <%= f.text_field(:email) %>
-        <br>
-
   <%= f.label(:gender) %>
     <%= f.select(:gender, ["Male", "Female"]) %>
-        <br>
-
   <%= f.label(:age) %>
     <%= f.number_field(:age) %>
-        <br>
-
   <%=f.label(:style) %>
     <%= f.text_field(:style) %>
-        <br>
-
   <%= f.label(:password) %>
     <%= f.password_field(:password) %>
-        <br>
-
   <%= f.label(:password_confirmation) %>
     <%= f.password_field(:password_confirmation) %>
-        <br>
-
   <%= f.submit %>
 <% end %>
-
 

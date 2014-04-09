@@ -23,34 +23,23 @@
   text-align: center;
  }
 
- .left_column {
-  background-color: black;
-  float: center;
-  height: 400px;
-  width: 400px;
-  position: relative;
+ p:hover {
+  color: black;
 
  }
 
- .logo {
+
+ .logo:hover {
   color: black;
-  vertical-align: middle;
   font-family: "Impact";
   font-size: 70px;
+  background-color: white;
 
  }
 
  .ig_likes {
   color: red;
   font-size: 16px;
-
- }
-
- a {
-  color: black;
-  text-decoration: bold;
-  font-style: Impact;
-
 
  }
 
@@ -61,6 +50,7 @@
 
  h1 {
     text-align: center;
+    color: red;
 
  }
 
@@ -78,11 +68,34 @@
 
  .outfit img {
   height: 300px;
+}
 
- }
+a.links {
+  color: red;
+  font-family: "Impact";
+  text-decoration: none;
+  display: inline-block;
+  padding: 5px;
+  border: 2px solid black;
+ /* border-radius: 10px;*/
+}
 
- .links a {
-  color: black
-  font-family: "Impact"
+a:hover {
+  color: black;
+  font-family: "Impact";
+  font-size: 20px;
+  background-color: silver;
 
- }
+
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+}
+
+.logo_img:hover {
+ background-color: blue;
+}
+

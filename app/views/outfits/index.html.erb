@@ -1,5 +1,16 @@
-<a href="/">Home</a>
+ <br><a class="links" href="/logout"> Logout</a>
+        <%= link_to("Upload an outfit", new_outfit_path, class: "links") %>
+
+        <a class="links" href="/users/<%=current_user.id%>">View your gallery</a>
+
+        <%= link_to("All outfits", all_outfits_path, class: "links") %>
+
+        <a class="links" href="/random">Explore Outfits!</a>
+
+        <a class="links" href="/users">Explore Users!</a>
+
 <br>
+<h1>All Outfits </h1>
 
   <% @outfits.each do |outfit| %>
     <%= image_tag outfit.photo.url(:small) %> <br>

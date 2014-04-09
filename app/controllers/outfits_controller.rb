@@ -47,7 +47,7 @@ class OutfitsController < ApplicationController
 
   def outfit_search
     results = []
-    response = HTTParty.get("https://api.instagram.com/v1/tags/outfit/media/recent?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}")
+    response = HTTParty.get("https://api.instagram.com/v1/tags/mensoutfits/media/recent?client_id=#{ENV['INSTAGRAM_CLIENT_ID']}")
     outfit_links = response["data"].map do |gram|
       results << [gram["images"]["low_resolution"]["url"],
       gram["likes"]["count"]]
