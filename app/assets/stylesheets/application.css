@@ -28,6 +28,12 @@
 
  }
 
+ .logo {
+  transition: .5s all;
+  font-family: "Impact";
+  background-color: white;
+ }
+
 
  .logo:hover {
   color: black;
@@ -77,6 +83,7 @@ a.links {
   display: inline-block;
   padding: 5px;
   border: 2px solid black;
+  transition: .2s all;
  /* border-radius: 10px;*/
 }
 
@@ -94,8 +101,3 @@ a {
   color: black;
 
 }
-
-.logo_img:hover {
- background-color: blue;
-}
-
