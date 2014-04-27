@@ -44,12 +44,20 @@ gem 'httparty'
 group :development, :test do
   gem 'rspec-rails'
   gem 'pry-rails'
+  gem 'factory_girl_rails'
   gem 'shoulda-matchers'
   gem 'annotate', ">=2.6.0"
   gem "rails-erd"
+  gem 'capybara'
 end
 
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
+gem 'rubocop'
+gem 'aws-sdk'
+gem 'devise'
+gem 'aws-s3', :require => 'aws/s3'
+
+
 
 
 

@@ -1,6 +1,14 @@
 OutfitterApp::Application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
 
+config.paperclip_defaults = {
+  :storage => :s3,
+  :s3_credentials => {
+    :bucket => ENV['Outfitter'],
+    :access_key_id => ENV['AKIAIL22AKTKC4BBHAZA'],
+    :secret_access_key => ENV['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']
+  }
+}
   # Code is not reloaded between requests.
   config.cache_classes = true
 
