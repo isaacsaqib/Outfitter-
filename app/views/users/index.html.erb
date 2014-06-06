@@ -12,12 +12,14 @@
 <h1> All Users </h1>
 
 <% @users.each do |user| %>
-  <a href="/users/<%= user.id %>">User profile</a>
+  <a id="user_names" href="/users/<%= user.id %>"><%= user.name %></a>
 
-  <p class="ig_likes"><strong>Name:</strong></p> <%= user.name %>
-  <p class="ig_likes">Gender:</strong></p> <%= user.gender %>
-  <p class="ig_likes">Email:</strong></p> <%= user.email %>
-  <p class="ig_likes">Style:</strong></p> <%= user.style %>
-  <p class="ig_likes">Age:</strong></p> <%= user.age %>
+  <p class="user_attributes"><strong>Name:</strong></p> <%= user.name %>
+  <p class="user_attributes">Gender:</strong></p> <%= user.gender %>
+  <p class="user_attributes">Email:</strong></p> <%= user.email %>
+  <p class="user_attributes">Style:</strong></p> <%= user.style %>
+  <p class="user_attributes">Age:</strong></p> <%= user.age %>
+  <br>
+  <br>
 
   <% end %>

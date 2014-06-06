@@ -14,4 +14,4 @@ In addition it allows them to:
 ```
 [Pivotal Tracker](https://www.pivotaltracker.com/s/projects/1048022)
 [ERD](https://github.com/isaacsaqib/Outfitter-/blob/master/erd.pdf)
-[Heroku](http://intense-stream-2912.herokuapp.com/)
+[Heroku](http://outfitters.herokuapp.com)

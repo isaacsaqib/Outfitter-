@@ -101,3 +101,14 @@ a {
   color: black;
 
 }
+
+#user_names {
+  text-decoration: underline;
+  font-size: 20px;
+  font-family: "Impact";
+}
+
+.user_attributes {
+  display: inline-block;
+
+}
